@@ -1,0 +1,279 @@
+/*  Web Design Responsivo */
+
+/* normatização css*/
+/* 1 EM - 16px - gambiarra 1EM - 10px , encinada pela professora Gabih Grimm
+100% - 16 px 
+x - 10px 
+
+explicação, eu multiplico 100 x 10= 1000 e divide por 16  então 1000: 16= 62,5 
+*/
+
+
+
+
+body{
+	font-family: 'Roboto', sans-serif;
+	color: #444;
+	line-height: 1.5;
+	font-size: 62.5%; /* a gambiarra da profe se aplica aqui 
+
+	troca 100% pelo 62,5% não posso esquecer de colocar com ponto porque virgula
+	ele não entende */
+
+}
+
+*,*:before,*:after{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing: border-box;
+}
+
+
+
+
+
+
+
+a{
+	text-decoration: none;
+	font-size: 1.6em; /*16px*/
+	color: #00CCFF;
+}
+
+
+a:hover{
+	text-decoration: underline;
+
+}
+
+
+.containerclearfix{
+ max-width: 1128px; /*  ele vai continuar assim 100% que é o 1128 px */
+ margin: 0 auto;
+}
+
+
+img, video, figure, embed{
+
+	max-width: 100%; /*  ele já o 100%, já esta em porcentagem 
+
+	não vou precisar mexer */
+
+}
+
+header{
+
+	width: 100%; /* aqui também já esta em 100% não vou precisar mexer 
+	então tudo que já estiver em porcentagem eu não preciso mudar
+	um exemplo,só vai acontecer de mudar se em  algum momento Medias queries puxar e era 100% 
+	 e eu estou abrindo no tablet e quero que ele sejá 50% então eu posso colocar tamanhos 
+	  diferentes para dispositivos diferentes, nesse caso aqui e para desktop então não precisa*/
+	height: 48px;
+	margin-top: 3.6em;/* 36px*/
+	margin-bottom: 3.6em; /* 36px*/
+}
+
+.logo{
+
+	width: 20.74%; /* 234px objeto -1128px contexto como ela só ocupa uma parte do header
+	 então se faz a proporção para saber o quanto ela ocupa dentro do contexto
+	  234:1128= 0,2074468085106383 x 100=20,74468085106383  e arredonda o número
+	   */
+	float: left;
+}
+
+nav{
+
+	width: 74.47%; /* 840px objeto : 1128px contexto =0,7446808510638298 x 100 =74,46808510638298 arredonda número
+	 */
+	float: right;
+}
+
+
+
+nav ul{
+
+	float: right;
+}
+
+nav li{
+
+	display: inline-block;
+	font-size: 1.2em; /* 12px*/
+	margin-top: 1.0em; /* 10px*/
+	margin-left: 2.0em;/* 20px*/
+
+
+}
+
+nav li a {
+
+	color: #999;
+}
+
+
+.banner{
+
+	background: url('img/banner.jpg');
+	height: 450px; /* Nas alturas a gente já viu que não tem problema 
+	então nas alturas não vamos mexer o que só muda no caso seria as larguras
+	*/
+	margin-bottom: 4.8em;/* 48px*/
+	position: relative;
+}
+.caixa{
+
+	position: absolute;
+	top: 48px;
+	background: rgba(0, 0, 0, 0.6);
+	width: 42.55%;/* 480px objeto  : 1128px contexto=0,425531914893617 x 100= 42,5531914893617 */
+	padding:2.4em 1.4em 2.4em 4.0em;/* top right bottom left */
+	display: center;
+}
+
+h1{
+
+	font-size: 4.0em;/* 40px*/
+	color: #FFF;
+	margin-top: 0;
+	margin-bottom: 0;
+	
+}
+
+
+.caixa p{
+
+	font-size: 1.8em;/* 18px*/
+	color: #FFF;
+	
+}
+
+
+article{
+    width: 23.40%; /* 264 : 1128 =0,2340425531914894 x 100 =23,40425531914894 */
+    float: left;
+    margin-right: 2.13%;/* 24 objeto :  1128 contexto = 0,0212765957446809 x 100 = 2,127659574468085*/
+
+
+}
+
+article:last-child{
+	margin-right: 0;
+}
+
+
+article p{
+	text-align: justify;
+	font-size: 1.6em; /* 16px*/
+}
+
+h2{
+	font-size: 2.4em;/* 24px*/
+
+}
+
+footer{
+	width: 100%;
+	margin-top: 2.4em;/* 24px */
+	margin-bottom: 2.4em;/* 24px*/
+}
+
+
+.footer{
+	font-size: 1.0em; /* 10px*/
+	margin-bottom: 0;
+}
+
+
+ /* Web Design Responsivo */
+
+
+/* Medias queries*/
+
+
+@media screen and (max-width: 1128px){
+
+.containerclearfix{
+	padding: 0 2.4em 0 2.42em; /* top right bottom left */
+}
+
+}
+
+@media screen and (max-width: 768px){
+	.caixa{
+		width: 65%; 
+	}
+
+	article{
+		width: 48%;
+		margin-bottom: 2.4em;
+		margin-right: 2%;
+	}
+
+	article:nth-child(even){
+		margin-right: 0;
+	}
+    .logo{
+    	margin-top: 1.2em;
+    	width: 25%;
+    }
+
+    }
+@media screen and (max-width: 718px){
+	.banner{
+		position: relative;
+		float: left;
+		margin: 0;
+		height: 150px;
+	}
+	.caixa{
+		position: relative;
+		display: block;
+		float: left;
+		width: 100%;
+		background: #000;
+		margin-top: 150px;
+	}
+
+	 h1{
+	 	font-size: 2.5em;
+	 }
+
+	 section{
+	 	margin-top: 450px;
+	 }
+
+}
+@media screen and (max-width: 640px){
+	nav{
+		width: 100%;
+	}
+	nav ul{
+		float: left;
+		font-size: 0.8em;
+	}
+	nav li:first-child{
+		margin-left: 0;
+	}
+}
+@media screen and (max-width: 520px){
+	article{
+		width: 100%;
+		margin-right: 0;
+
+	}
+	.caixa{
+		padding: 1.2em 2em 1.2em 2em;
+		position: relative;
+		display: block;
+		float: left;
+		width: 100%;
+		background: #000;
+		margin-top: 80px;
+	}
+	.banner{
+		height: 120px;
+	}
+
+
+}
