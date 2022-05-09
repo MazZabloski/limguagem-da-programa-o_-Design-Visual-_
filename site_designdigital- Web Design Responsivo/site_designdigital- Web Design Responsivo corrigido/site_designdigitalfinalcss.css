@@ -47,7 +47,7 @@ a:hover{
 }
 
 
-.containerclearfix{
+.container clearfix{
  max-width: 1128px; /*  ele vai continuar assim 100% que é o 1128 px */
  margin: 0 auto;
 }
